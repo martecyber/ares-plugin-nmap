@@ -1,0 +1,10 @@
+{
+  "id": "nmap",
+  "version": "1.0.0-beta1",
+  "displayName": "Nmap",
+  "vendor": "Mart\u00edn Romera",
+  "license": "Proprietary",
+  "description": "Agent-executed port/service scanner: declares the agent-tool spec ares-agent uses to build the nmap command, plus the ImportParser for its XML output.",
+  "sdkVersion": "1",
+  "icon": "/img/sources/nmap.svg"
+}

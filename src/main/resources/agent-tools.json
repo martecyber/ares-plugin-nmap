@@ -1,0 +1,71 @@
+[
+  {
+    "toolId": "nmap",
+    "displayName": "Nmap",
+    "binary": "nmap",
+    "resultFormat": "default",
+    "validScopeKinds": ["domain", "domain_wildcard", "ip", "cidr"],
+    "validAssetTypes": ["ip", "domain", "host", "service"],
+    "maxTargets": null,
+    "targetEmission": "positional",
+    "outputArgs": ["-oX", "{outPath}"],
+    "minVersion": null,
+    "requiresRoot": false,
+    "customBuilder": null,
+    "fields": [
+      {
+        "key": "scanType",
+        "type": "enum",
+        "flag": null,
+        "options": ["-sS", "-sT", "-sU", "-sV", "-sn"]
+      },
+      {
+        "key": "ports",
+        "type": "string",
+        "flag": "-p",
+        "pattern": "^[A-Za-z0-9,\\-]+$"
+      },
+      {
+        "key": "timingTemplate",
+        "type": "enum",
+        "flag": null,
+        "options": ["-T0", "-T1", "-T2", "-T3", "-T4", "-T5"]
+      },
+      {
+        "key": "minRate",
+        "type": "number",
+        "flag": "--min-rate",
+        "min": 1,
+        "max": 1000000
+      },
+      {
+        "key": "maxRate",
+        "type": "number",
+        "flag": "--max-rate",
+        "min": 1,
+        "max": 1000000
+      },
+      {
+        "key": "detectVersion",
+        "type": "boolean_flag",
+        "flag": "-sV"
+      },
+      {
+        "key": "runDefaultScripts",
+        "type": "boolean_flag",
+        "flag": "-sC"
+      },
+      {
+        "key": "skipHostDiscovery",
+        "type": "boolean_flag",
+        "flag": "-Pn"
+      },
+      {
+        "key": "scripts",
+        "type": "string",
+        "flag": "--script",
+        "pattern": "^[A-Za-z0-9_,\\-.*\\s()]{1,256}$"
+      }
+    ]
+  }
+]
